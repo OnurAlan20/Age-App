@@ -1,29 +1,53 @@
 package com.onur.ageapp
 
+import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
+import android.widget.DatePicker
 import android.widget.TextView
+import android.widget.Toast
+import java.time.DayOfWeek
+import java.time.Month
+import java.time.Year
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val textView1 = findViewById<TextView>(R.id.textview1)
-        val btnClickMe = findViewById<Button>(R.id.btnclick1)
-        val textCounter = findViewById<TextView>(R.id.counter)
-        var countValue = 0
+        val btnDatePicker = findViewById<Button>(R.id.btn_date_picker)
 
+        //when you click button the code which in the setOnClickListener will work.
+        btnDatePicker.setOnClickListener {
+            clickDatePicker()
 
-        btnClickMe.setOnClickListener {
-            textView1.text = " You Click Me Bro!"
-            textView1.text = " You Click Me Bro!231"
-            countValue+=1
-            textCounter.text = countValue.toString()
         }
 
 
+
+    }
+
+    //This is How Can you do a date picker dialog.
+    fun clickDatePicker(){
+
+        val myCalendar = Calendar.getInstance()
+        val year = myCalendar.get(Calendar.YEAR)
+        val month = myCalendar.get(Calendar.MONTH)
+        val day = myCalendar.get(Calendar.DAY_OF_MONTH)
+
+        DatePickerDialog(this,
+            DatePickerDialog.OnDateSetListener{
+                view, year, month, dayOfMonth ->
+                Toast.makeText(this,"Date Picker Dialog works well!",Toast.LENGTH_LONG).show()
+            },
+            year,
+            month,
+            day
+
+        ).show()
 
     }
 }
