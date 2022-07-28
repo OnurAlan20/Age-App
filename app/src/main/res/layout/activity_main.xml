@@ -65,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="01.01.2001"
+        android:text="DD/MM/YYYY"
         android:textColor="@color/top_of_app"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -85,11 +85,11 @@
         />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textViewCounter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="1400000000"
+        android:text="Please enter your birthday!"
         android:textColor="@color/text_blue"
         android:textSize="25sp"
         android:textStyle="bold"
